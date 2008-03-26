@@ -77,6 +77,9 @@ class IpyBot(object):
 	def IpyBotCommand_version_Handler(self, who, data):
 		self.client.SendMessage(SendType.Action, self.channel, 'is %s' % VERSION_STRING)
 
+	def IpyBotCommand_panic_Handler(self, who, data):
+		self.client.SendMessage(SendType.Action, self.channel, 'is srsly liek panicking. OMFGOMFGOMFGLOLWUT?')
+
 	def IpyBotCommand_Default_Handler(self, who, message):
 		if not len(message):
 			return
