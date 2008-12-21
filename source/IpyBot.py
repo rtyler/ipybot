@@ -22,7 +22,7 @@ DEFAULT_NICK = 'IpyBotDev'
 DEFAULT_SERVER = 'chat.freenode.net'
 DEFAULT_PORT = 8001
 DEFAULT_CHANNELS = ['#ipybot']
-DEFAULT_AUTHORIZED = ['rtyler', 'zachallia']
+DEFAULT_AUTHORIZED = ['rtyler']
 DEFAULT_COMMAND = '!'
 
 class IpyBot(object):
@@ -57,6 +57,7 @@ class IpyBot(object):
 
 	def OnMessageToChannel(self, who, data):	
 		message = ':'.join(data[2:])
+		print (who, message)
 		if message.startswith(DEFAULT_COMMAND) and len(message) > len(DEFAULT_COMMAND):
 			message = message[1:].split(' ')
 			if len(message):
